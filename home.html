@@ -1,478 +1,109 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Drifting Horizon</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
-        <style>
- 
-         /* website background*/
-            
-          html {
-            background: #000;
-          }
-          
-          
-          table {
-          position:absolute;
-          bottom:92%;
-          left:0%;
-          border: double 3px #000000;
-          padding: 5px
-          }
-               
-           /* lightboxes*/
-          a {
-            color: #fff;
-            text-decoration: none;
-          }
-              
-                      
-          a:hover {
-            color: grey;
-            text-decoration: none;
-          }
-          
-                      
-          a:focus {
-            color: purple;
-            text-decoration: none;
-          }
-          
-          img {
-             border-radius: 10px;
-             padding-right: 5px;
-             padding-left: 5px;
-          }
-          
-          .lightbox {
-            background: #455A64;
-            color: white;
-            padding: 1.5rem;
-            border: 4px solid black;
-            box-shadow: 4px 4px 0 black;
-            width: 350px;
-            position: fixed;
-            transform: scale(0);
-            transition: transform .5s ease-in;
-            border-radius: 15%;
-          }
-          
-          .lightbox:target {
-            transform: scale(0.95);
-          }
-          
-          .close-me::after {
-            content: "\00D7";
-            display: inline-block;
-            text-align: center;
-            line-height: 0;
-            z-index: 3;
-            color: pink;
-            border-radius: 30%;
-            width: 2rem;
-            height: 2rem;
-            line-height: 2rem;
-            font-size: 1.8rem;
-            text-align: center;
-            margin: 0;
-            background-color: black;
-            font-weight: bold;
-            cursor: pointer;
-          }
-                               
-                      
-                      
-          /* planet*/
-          .planet{
-                    
-            position: absolute;
-            height: 16%;
-            width: 8%;
-            left: 43%;
-          }
-                      
-           
-                      
-          /* ufo */
-          .ufo {
-            position: absolute;
-            width: 77px;
-            background: #fff;
-            height: 20px;
-            top: 46%;
-            border-radius: 100%;
-            left: 45%;
-            -webkit-animation-name: ufo;
-            -webkit-animation-duration: 10s;
-            -webkit-animation-iteration-count: 1;
-            -webkit-animation-timing-function: ease-in-out;
-            
-          }
-          
-          
-          
-          @-webkit-keyframes ufo {
-            0% {
-              -webkit-transform: translateX(1600%)
-                translatey(5000%);
-              box-shadow:0px 0px 60px 20px rgba(255,255,255,1.0);
-              
-            }
-            
-            
-            20%{
-              width:77px;
-              -webkit-transform: translateX(200%) translatey(1000%);
-            }
-            
-            
-            35%{
-              box-shadow:0px 0px 30px 10px rgba(255,255,255,0.4);
-              -webkit-transform: translateX(-300%) translatey(-250%);
-              width:30px;
-            }
-            
-            
-            40%{
-              width:35px;
-              box-shadow:0px 0px 30px 20px rgba(255,255,255,0.2);
-            }
-            
-            
-            
-            
-            65%{
-              box-shadow:0px 0px 10px 5px rgba(255,255,255,0.2);
-              -webkit-transform: translateX(300%) translatey(100%)rotate(0deg);
-              width:40px;
-              height:10px;
-            }
-            
-            
-            
-            70%{
-              -webkit-transform: translateX(150%) translatey(100%) rotate(10deg);       width:300px;
-              box-shadow:0px 0px 3px 10px rgba(255,255,255,0.4);
-            }
-            
-            
-            
-            100% {
-              -webkit-transform: translateX(-400000%) translatey(-300000%) rotate(30deg);
-              box-shadow:0px 0px 3px 10px rgba(255,255,255,0.8);
-              width:2000px;
-            }
-          }
-          
-          header {
-            background-color: black;
-            background-image: url("https://pzblock.github.io/projects/star.jpeg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding-top: 1%;
-            padding-bottom: 19%;
-          }
-            
-          h1 {
-            color:white;
-            text-align:center;
-            font-family: Lato, sans-serif;
-            font-size: 22px;
-          }
-          
-          h2 {
-            color:white;
-            text-align: center;
-            font-family: Courier New;
-            font-size: 22px;
-            margin-bottom:5px;
-          }
-            
-            
-          .righth3 {
-            color:white;
-            text-align: left;
-            font-family: 'Roboto', cursive;
-            font-size: 24px;;
-            float: right;
-          }
-          
-          .lefth3 {
-            color:white;
-            text-align: left;
-            font-family: 'Roboto', cursive;
-            font-size: 24px;
-            float: left;
-          }
-            
-      
-           .middleh3 {
-            color:white;
-            text-align: middle;
-            font-family: 'ZCOOL KuaiLe', cursive;
-            float: middle;
-          }
-          
-          h4 {
-            color:black;
-            text-align: center;
-            font-family: 'ZCOOL KuaiLe', cursive;
-            font-size: 24px;
-            margin-bottom:2px;
-          }
-            
-          .spacephotos {
-            color:white;
-            text-align:left;
-            font-family: 'Roboto', sans-serif;
-            font-size: 22px;
-          }
-          
-          .glow {
-            font-size: 80px;
-            color: white;
-            text-align: center;
-            -webkit-animation: glow 6s ease-in-out infinite alternate;
-            -moz-animation: glow 1s ease-in-out infinite alternate;
-            animation: glow 1s ease-in-out infinite alternate;
-          }
-          
-          @-webkit-keyframes glow {
-          from {
-              text-shadow: 0 0 100px yellow, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px green, 0 0 70px #e60073;
-            }
-            
-          to {
-              text-shadow: 0 0 20px #fff, 0 0 30px pink, 0 0 40px #ff4da6, 0 0 50px red, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px blue;
-          }
-        }
-             
-             
-             
-                
-        * { box-sizing: border-box; }
+<HTML>
+<HEAD>
 
-@mixin center() {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+  
+<STYLE>
+
+
+
 
 body {
-  background-color: dark grey;
+  --cg1: conic-gradient(
+    rgba(187, 226, 177, 1),
+    rgba(0,0,0,1),
+    rgba(162, 169, 164, 1)
+  );
+  min-height:100vh;
+  background:center/100% 100% var(--cg1);
 }
 
-ul {
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100px;
-  height:100px;
-  @include center;
+.nico {
+ position:absolute;
+   left:200;
+   top:10;
 }
 
-li {
-  background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 1px;
-  box-shadow: 2px 2px 1px lightgray;
-  flex: 1;
-  margin: .5em;
-  padding: .5em;
-  
-  
-  }
-  
-  .image-wrapper {
-    border-radius: 3px;
-    overflow: hidden;
-    padding-bottom: 90%;
-    position: relative;
-
-    img {
-      border-radius: 1px;
-      position: absolute;
-      height: 50px;
-      width: 50px;
-    }
-  }
-  
-  &:nth-child(1) {
-    .image-wrapper {
-      background-size: cover;
-      background-position: center;
-    }
-  }
-  
-  &:nth-child(2) {
-    img {
-      max-height:100%;
-      @include center;
-    }
-  }
-  
-  &:nth-child(3) {
-    img {
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      width: 100%;
-    }
-  }
-}
-             
-.scrolling-wrapper {
-  -webkit-overflow-scrolling: touch;
+.nico:hover{
+  border: transparent solid 2px;
 }
 
-div.d {
-    display: none;
-    background: dark grey;
-    border:1px solid blue;
-    height:30px;
-    width:600px;
-    margin-left:10px;
-    
+.tnico:hover{
+  background: pink;
+  border: blue solid 2px;
+  color: white;
+  text-decoration: none;
 }
 
-a:hover + div {
-    display: inline;
-    float: left;
-    align-text: center;
-
-    
+.tnico {
+   position:absolute;
+   left:330;
+   top:220;
 }
 
-               
-        </style>
-        
-        
- 
-        
-    </head>
-    
-      <body>
-        
+.dad {
+ position:absolute;
+   right:10;
+   top:10;
+}
 
-  <div class="ufo"></div>
-     <div id="container" name="header">
+.dad:hover{
+  border: transparent solid 2px;
+}
+
+.tdad {
+   position:absolute;
+   right:320;
+   top:220;
+}
+
+.tdad:hover{
+  background: pink;
+  border: blue solid 2px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+</STYLE>
+
+</HEAD>
+
+
+<BODY>
   
-            <header class="header">
-                  <h1 class="glow">Drifting Horizon™</h1>
-                  <h2>R E A C H - F O R - T H E - S T A R S</h2>
-                  <hr width="450">
-                  <h2>-Nico Block-<br>2019</h2>
-                  <img class="planet" src="https://space-facts.com/wp-content/uploads/moon-transparent-300x300.png">
-                    <table border="0" width="100%" bgcolor="#000000">
-                    <tr>
-                    <td>
-                    <div>
-                    <h3 class="righth3">
-                    <br>
-                    <a href="#about-dh">What is Drifting Horizon?</a>
-                    </h3>
-                    <h3 class="lefth3">
-                    <br>
-                    <a href="#about-nico">About the author</a>
-                    </h3>
-                    <div class="lightbox" id="about-dh">
-                    <a href="#" class="close-me"></a>
-                    <h4>Drifting Horizon</h4>
-                    <p class="driftinghorizoninfop">This website was designed to house the most spectacular captures of space.  I will include the best photographs I can find and the information about them.  Please email me any images you want me to include.</p>
-                    </div>
-                    <div class="lightbox" id="about-nico">
-                    <a href="#" class="close-me"></a>
-                    <h4>Nico Block</h4>
-                    <p><img border="0" padding="2" align="left" height="50%" width="50%" src="https://lh3.googleusercontent.com/EyWWrF2FLpsXG1OmGMSClEHDZTUZ94fXBMpOcHnNAxKvJgof4ufGPYX3E_SiA8X-ov616UO-yDTe7oM9WcbWhlv0qWS21vtG-eswcYInU0BSieXeK8fWNYGwWxgRqzyZQMFlAg1Xxqwc2C8IuWAH3sW2lK3yrZpP5vBZB1mHvCtoqr1sVd07T9D5wa278_rDUuHAFazXL1Wn4eBxMH6fYnJbJE4HGcEdXeWKXAeCuE9s29HDeLw9BeQ7Am3SblT2bJ5_6NGjuNP6pmM8hVjT7dEkS2IfwHyNaGahGv4W9-yr7jVtvDixGqHkeDIOrg9nouDJv7tIm0gXUSMIgnsrktuFEsTHGSrr7Hl0QGCw9IqQzHY4DsTTBlbAlscNCkEaek-WsoiWLBN3NtlRWr9Z1zvdeU-ZcfuiBmsL-QHb0gstX8WuvpCL2nCj4bEFSDvFvF_cdHf-_8Y-K-aXxL6lTnWUZJfFHp5cNAFuB-pY4sv6VgMNRq65TdZWCGEkdTGxV2FV6h6jEVeODa4HtIDr4thVh9rjiZDIvh8s4U3YMlbpwp7YdajhvJrsROrEMp1JvL3R6PwpdBtEqickMb7Z3n2A76PJntFXdi1sqd08UjhaVzycFcSI7ZOapBwb05X8Mgzpb1_5H0GFoXc8dvkJ_g9q=w702-h934-no"> </p>
-                    <p>Hello, <br> I'm Nico Block. I was born and raised in Albuquerque New Mexico and love coding. Space also amazes me and thats why I made his website</p>
-                    </div>
-                    </div>
-                    </td>
-                    </tr>
-                  </table>
-             </header>
- 
-     </div>
+  
+
      
-    <footer>
-       
-<div style="border:0px solid black;height:135px;width:100%;overflow-y:hidden;overflow-x:scroll;">
-<p style="width:`250%;">
-<div class="scrolling-wrapper">
-          <ul>
-  <li>
-    <div class="image-wrapper">
-      <a href="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-640x350.jpg">
-      <img  height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-640x350.jpg" alt="Crab nebula">
-      </a>
-      <div class="d">The amazing Crab Nebula as viewed through the hubble telescope.</div>
-    </div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper">
-     <a href="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA22574-640x350.jpg">
-     <img  height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA22574-640x350.jpg" alt="Hubble telescope servicing mission">
-     </a>
-     <div class="d">The Hubble Telescope is being serviced by a spaceman.</div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper">
-      <a href="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg">
-      <img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini">
-      </a>
-    <div class="d">The planet Saturn as veiwed by the Cassini Satelite </div>
-    </div>
-  <li>
-    
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
-  
-  <li>
-    <div class="image-wrapper"><img height="65" weight="65" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18291-640x350.jpg" alt="Saturn viewed from Cassini"></div>
-  </li>
+ 
+   
+   <div class="nico" id="nhover">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="800" height="800"><defs><path d="M403.11 97.12C409.73 97.12 415.1 102.48 415.1 109.11C415.1 191.45 415.1 426.51 415.1 508.85C415.1 515.48 409.73 520.84 403.11 520.84C335.85 520.84 146.05 520.84 78.79 520.84C72.16 520.84 66.8 515.48 66.8 508.85C66.8 426.51 66.8 191.45 66.8 109.11C66.8 102.48 72.16 97.12 78.79 97.12C146.05 97.12 335.85 97.12 403.11 97.12Z" id="b1csG9ZA3l"></path><path d="M389.6 118.19C395.65 118.19 400.55 123.08 400.55 129.13C400.6 203.89 400.74 417.26 400.78 492.02C400.79 498.07 395.89 502.97 389.85 502.97C329.16 503.01 158.05 503.12 97.37 503.16C91.32 503.16 86.42 498.27 86.42 492.22C86.37 417.46 86.24 204.09 86.19 129.32C86.18 123.28 91.08 118.38 97.12 118.38C157.81 118.34 328.92 118.23 389.6 118.19Z" id="e4fjYvsTZ9"></path><path d="M449.09 118.19C449.09 144.85 427.44 166.5 400.78 166.5C374.12 166.5 352.48 144.85 352.48 118.19C352.48 91.53 374.12 69.88 400.78 69.88C427.44 69.88 449.09 91.53 449.09 118.19Z" id="a3EC99n2ZG"></path><path d="M411.8 85.22L382.99 118.55L392.82 123.44L372.09 147.55L417.76 122.59L403.71 115.61L427.26 92.89L411.8 85.22Z" id="d2Im0an8mv"></path></defs><g><g><g><filter id="shadow313402" x="57.8" y="88.12" width="367.31" height="442.73" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="in"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#8c8080" flood-opacity="0.5"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="out"></feComposite></filter><path d="M403.11 97.12C409.73 97.12 415.1 102.48 415.1 109.11C415.1 191.45 415.1 426.51 415.1 508.85C415.1 515.48 409.73 520.84 403.11 520.84C335.85 520.84 146.05 520.84 78.79 520.84C72.16 520.84 66.8 515.48 66.8 508.85C66.8 426.51 66.8 191.45 66.8 109.11C66.8 102.48 72.16 97.12 78.79 97.12C146.05 97.12 335.85 97.12 403.11 97.12Z" id="aBAcfB5fV" fill="white" fill-opacity="1" filter="url(#shadow313402)"></path></g><use xlink:href="#b1csG9ZA3l" opacity="1" fill="#ff000d" fill-opacity="1"></use><g><filter id="shadow6540350" x="57.8" y="88.12" width="367.31" height="442.73" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="out"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#c5c6ce" flood-opacity="0.8"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="in"></feComposite></filter><path d="M403.11 97.12C409.73 97.12 415.1 102.48 415.1 109.11C415.1 191.45 415.1 426.51 415.1 508.85C415.1 515.48 409.73 520.84 403.11 520.84C335.85 520.84 146.05 520.84 78.79 520.84C72.16 520.84 66.8 515.48 66.8 508.85C66.8 426.51 66.8 191.45 66.8 109.11C66.8 102.48 72.16 97.12 78.79 97.12C146.05 97.12 335.85 97.12 403.11 97.12Z" id="d3l8l7frf" fill="white" fill-opacity="1" filter="url(#shadow6540350)"></path></g></g><g><use xlink:href="#e4fjYvsTZ9" opacity="1" fill="#e6ecfd" fill-opacity="1"></use></g><g><g><filter id="shadow7021162" x="343.48" y="60.88" width="115.61" height="115.61" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="in"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#e7b7b7" flood-opacity="0.5"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="out"></feComposite></filter><path d="M449.09 118.19C449.09 144.85 427.44 166.5 400.78 166.5C374.12 166.5 352.48 144.85 352.48 118.19C352.48 91.53 374.12 69.88 400.78 69.88C427.44 69.88 449.09 91.53 449.09 118.19Z" id="h9f7BuWy9" fill="white" fill-opacity="1" filter="url(#shadow7021162)"></path></g><use xlink:href="#a3EC99n2ZG" opacity="1" fill="#e02521" fill-opacity="1"></use><g><filter id="shadow7657350" x="343.48" y="60.88" width="115.61" height="115.61" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="out"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#ceb6af" flood-opacity="0.8"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="in"></feComposite></filter><path d="M449.09 118.19C449.09 144.85 427.44 166.5 400.78 166.5C374.12 166.5 352.48 144.85 352.48 118.19C352.48 91.53 374.12 69.88 400.78 69.88C427.44 69.88 449.09 91.53 449.09 118.19Z" id="b4iEoOKnp" fill="white" fill-opacity="1" filter="url(#shadow7657350)"></path></g></g><g><use xlink:href="#d2Im0an8mv" opacity="1" fill="#e6ecfd" fill-opacity="1"></use><g><filter id="shadow3463208" x="363.09" y="76.22" width="74.17" height="81.34" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="out"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#261313" flood-opacity="0.8"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="in"></feComposite></filter><path d="M411.8 85.22L382.99 118.55L392.82 123.44L372.09 147.55L417.76 122.59L403.71 115.61L427.26 92.89L411.8 85.22Z" id="acS0mVFvy" fill="white" fill-opacity="1" filter="url(#shadow3463208)"></path></g></g></g></svg>
+   </div>
+   
+   
 
-</ul>
+<div class="dad">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="800" height="800"><defs><path d="M405.65 97.12C412.27 97.12 417.64 102.48 417.64 109.11C417.64 191.45 417.64 426.51 417.64 508.85C417.64 515.48 412.27 520.84 405.65 520.84C338.38 520.84 148.59 520.84 81.32 520.84C74.7 520.84 69.33 515.48 69.33 508.85C69.33 426.51 69.33 191.45 69.33 109.11C69.33 102.48 74.7 97.12 81.32 97.12C148.59 97.12 338.38 97.12 405.65 97.12Z" id="bFMXv67BK"></path><path d="M389.6 118.19C395.65 118.19 400.55 123.08 400.55 129.13C400.6 203.89 400.74 417.26 400.78 492.02C400.79 498.07 395.89 502.97 389.85 502.97C329.16 503.01 158.05 503.12 97.37 503.16C91.32 503.16 86.42 498.27 86.42 492.22C86.37 417.46 86.24 204.09 86.19 129.32C86.18 123.28 91.08 118.38 97.12 118.38C157.81 118.34 328.92 118.23 389.6 118.19Z" id="feWsLERa9"></path><path d="M126.11 118.23C126.11 144.89 104.47 166.53 77.81 166.53C51.15 166.53 29.5 144.89 29.5 118.23C29.5 91.57 51.15 69.92 77.81 69.92C104.47 69.92 126.11 91.57 126.11 118.23Z" id="a5xX0BEC2s"></path><path d="M88.24 104.91L91.61 107.22L88.48 111.28L88.68 111.51L89.17 112.11L89.64 112.74L90.08 113.38L90.49 114.04L90.88 114.71L91.24 115.4L91.58 116.1L91.88 116.82L92.16 117.56L92.41 118.3L92.62 119.06L92.81 119.83L92.96 120.61L93.08 121.4L93.16 122.2L93.22 123.01L93.23 123.82L93.22 124.64L93.16 125.45L93.08 126.25L92.96 127.04L92.81 127.82L92.62 128.59L92.41 129.34L92.16 130.09L91.88 130.82L91.58 131.54L91.24 132.25L90.88 132.93L90.49 133.61L90.08 134.27L89.64 134.91L89.17 135.53L88.68 136.14L88.16 136.73L87.63 137.29L87.06 137.84L86.48 138.37L85.88 138.88L85.25 139.36L84.61 139.82L83.95 140.26L83.27 140.68L82.57 141.07L81.85 141.44L81.12 141.78L80.37 142.09L79.61 142.38L78.83 142.64L78.04 142.87L77.23 143.07L76.42 143.25L75.59 143.39L74.75 143.5L73.9 143.58L73.04 143.63L72.17 143.65L71.3 143.63L70.45 143.58L69.6 143.5L68.76 143.39L67.93 143.25L67.11 143.07L66.31 142.87L65.52 142.64L64.74 142.38L63.97 142.09L63.23 141.78L62.49 141.44L61.78 141.07L61.08 140.68L60.4 140.26L59.73 139.82L59.09 139.36L58.47 138.88L57.86 138.37L57.28 137.84L56.72 137.29L56.18 136.73L55.67 136.14L55.18 135.53L54.71 134.91L54.27 134.27L53.85 133.61L53.46 132.93L53.1 132.25L52.77 131.54L52.46 130.82L52.19 130.09L51.94 129.34L51.72 128.59L51.54 127.82L51.39 127.04L51.27 126.25L51.18 125.45L51.13 124.64L51.11 123.82L51.13 123.01L51.18 122.2L51.27 121.4L51.39 120.61L51.54 119.83L51.72 119.06L51.94 118.3L52.19 117.56L52.46 116.82L52.77 116.1L53.1 115.4L53.46 114.71L53.85 114.04L54.27 113.38L54.71 112.74L55.18 112.11L55.67 111.51L56.18 110.92L56.72 110.35L57.28 109.8L57.86 109.27L58.47 108.77L59.09 108.28L59.73 107.82L60.4 107.38L61.08 106.97L61.78 106.57L62.49 106.21L63.23 105.87L63.97 105.55L64.74 105.27L65.52 105.01L66.31 104.77L67.11 104.57L67.93 104.4L68.76 104.25L69.6 104.14L70.45 104.06L71.3 104.01L72.17 104L73.04 104.01L73.9 104.06L74.75 104.14L75.59 104.25L76.42 104.4L77.23 104.57L78.04 104.77L78.83 105.01L79.21 105.13L82.44 100.94L87.07 104.11L91.24 98.59L92.42 99.38L88.24 104.91ZM60.64 110.07L60.49 110.09L60.34 110.12L60.18 110.16L60.02 110.21L59.85 110.27L59.69 110.34L59.52 110.42L59.35 110.51L59.18 110.6L59 110.7L58.83 110.82L58.65 110.93L58.47 111.06L58.3 111.2L58.12 111.34L57.94 111.49L57.76 111.64L57.58 111.81L57.4 111.98L57.23 112.16L57.05 112.34L56.87 112.53L56.7 112.73L56.53 112.93L56.35 113.14L56.18 113.36L56.01 113.58L55.85 113.8L55.69 114.04L55.52 114.27L55.37 114.52L55.21 114.76L55.06 115.01L54.92 115.26L54.78 115.52L54.65 115.76L54.52 116.01L54.4 116.26L54.29 116.51L54.18 116.75L54.08 117L53.99 117.24L53.9 117.48L53.82 117.71L53.74 117.95L53.68 118.18L53.62 118.4L53.56 118.63L53.51 118.85L53.47 119.06L53.44 119.28L53.41 119.48L53.39 119.69L53.37 119.89L53.36 120.08L53.36 120.27L53.37 120.45L53.38 120.62L53.4 120.79L53.43 120.96L53.46 121.11L53.5 121.26L53.55 121.41L53.61 121.54L53.67 121.67L53.74 121.79L53.81 121.9L53.9 122L53.99 122.1L54.08 122.19L54.19 122.26L54.3 122.33L54.42 122.39L54.54 122.44L54.67 122.47L54.8 122.5L54.94 122.51L55.08 122.52L55.23 122.52L55.37 122.5L55.53 122.48L55.68 122.45L55.84 122.41L56 122.35L56.16 122.29L56.33 122.23L56.5 122.15L56.67 122.06L56.84 121.97L57.01 121.86L57.19 121.75L57.37 121.64L57.54 121.51L57.72 121.37L57.9 121.23L58.08 121.08L58.26 120.93L58.43 120.76L58.61 120.59L58.79 120.41L58.97 120.23L59.14 120.04L59.32 119.84L59.49 119.64L59.66 119.43L59.83 119.21L60 118.99L60.17 118.77L60.33 118.53L60.49 118.3L60.65 118.05L60.81 117.81L60.96 117.56L61.1 117.3L61.24 117.05L61.37 116.81L61.5 116.56L61.62 116.31L61.73 116.06L61.84 115.82L61.94 115.57L62.03 115.33L62.12 115.09L62.2 114.86L62.27 114.62L62.34 114.39L62.4 114.17L62.46 113.94L62.5 113.72L62.55 113.5L62.58 113.29L62.61 113.09L62.63 112.88L62.64 112.68L62.65 112.49L62.65 112.3L62.65 112.12L62.63 111.95L62.61 111.78L62.59 111.61L62.55 111.46L62.51 111.31L62.47 111.16L62.41 111.03L62.35 110.9L62.28 110.78L62.2 110.67L62.12 110.56L62.03 110.47L61.93 110.38L61.83 110.31L61.72 110.24L61.6 110.18L61.47 110.13L61.35 110.1L61.21 110.07L61.08 110.06L60.94 110.05L60.79 110.05L60.64 110.07ZM102.81 91L99.93 93.77L100.61 97.69L97.06 95.84L93.51 97.69L94.19 93.77L91.32 91L95.29 90.43L97.06 86.87L98.84 90.43L102.81 91Z" id="a39QVbd2A"></path></defs><g><g><use xlink:href="#bFMXv67BK" opacity="1" fill="#488bf4" fill-opacity="1"></use><g><filter id="shadow12209544" x="60.33" y="88.12" width="367.31" height="442.73" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="out"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#b64c4c" flood-opacity="0.8"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="in"></feComposite></filter><path d="M405.65 97.12C412.27 97.12 417.64 102.48 417.64 109.11C417.64 191.45 417.64 426.51 417.64 508.85C417.64 515.48 412.27 520.84 405.65 520.84C338.38 520.84 148.59 520.84 81.32 520.84C74.7 520.84 69.33 515.48 69.33 508.85C69.33 426.51 69.33 191.45 69.33 109.11C69.33 102.48 74.7 97.12 81.32 97.12C148.59 97.12 338.38 97.12 405.65 97.12Z" id="bmpGMs5OZ" fill="white" fill-opacity="1" filter="url(#shadow12209544)"></path></g></g><g><use xlink:href="#feWsLERa9" opacity="1" fill="#cadee9" fill-opacity="1"></use></g><g><use xlink:href="#a5xX0BEC2s" opacity="1" fill="#205ed3" fill-opacity="1"></use><g><filter id="shadow12406052" x="20.5" y="60.92" width="115.61" height="115.61" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"><feFlood></feFlood><feComposite in2="SourceAlpha" operator="out"></feComposite><feGaussianBlur stdDeviation="1"></feGaussianBlur><feOffset dx="1" dy="1" result="afterOffset"></feOffset><feFlood flood-color="#13470f" flood-opacity="0.8"></feFlood><feComposite in2="afterOffset" operator="in"></feComposite><feMorphology operator="dilate" radius="1"></feMorphology><feComposite in2="SourceAlpha" operator="in"></feComposite></filter><path d="M126.11 118.23C126.11 144.89 104.47 166.53 77.81 166.53C51.15 166.53 29.5 144.89 29.5 118.23C29.5 91.57 51.15 69.92 77.81 69.92C104.47 69.92 126.11 91.57 126.11 118.23Z" id="c5V8m4VDJ3" fill="white" fill-opacity="1" filter="url(#shadow12406052)"></path></g></g><g><use xlink:href="#a39QVbd2A" opacity="1" fill="#6afe58" fill-opacity="1"></use></g></g></svg>
 </div>
-</div>
-       
-     </footer>
+
+  <table class="tnico">
+    <tr>
+      <td>
+        <a href="dh.html">If you're interested in Nico's work, please click here!</a>
+      </td>
+    </tr>
+  </table>
   
-     
-   </body>
-
-</html>
-
-<!-- https://codepen.io/Weed-Nim/pen/Nbeaqr-->
+   <table class="tdad">
+    <tr>
+      <td>
+        <a href="dh.html">If you're interested in Phillip's work, please click here!</a>
+      </td>
+    </tr>
+  </table>
+  
+</BODY>
+</HTML>
